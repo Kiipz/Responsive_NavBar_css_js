@@ -1,1 +1,1 @@
-### simple responsive navbar with htm, css and javascript
+### simple responsive navbar with html, css and javascript
