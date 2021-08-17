@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>navbar</title>
+    <style>
+        .clearfix {
+            overflow: auto;
+        }
+        .clearfix::after {
+            content: '';
+            clear: both;
+            display: table;
+        }
+        /* @media only screen and (max-width: 768px) { mobile */
+            #hamburgerBtn {
+                background: none;
+                border: none;
+                color: #fff;
+                font-size: 20px;
+                cursor: pointer;
+                padding: 5px;
+            }
+            nav { background-color: #23cfa7; }
+            nav ul { margin: 0; padding: 0; }
+            nav ul li { list-style-type: none; }
+            nav a {
+                display: block;
+                padding: 5px 0;
+                color: #eee;
+                text-align: center;
+                text-decoration: none;
+                font-size: 16px;
+            }
+            nav li.active {background-color: rgba(0,0,0,0.5);}
+            nav a:hover {background-color: rgba(0,0,0,0.2);}
+            nav ul.open {display: block;}
+            nav ul {display: none;}
+        /* } */
+        @media only screen and (min-width: 768px) { /* medium devices */
+            nav button {display: none;}
+            nav ul {display: block;}
+            nav li {width: 25%; float: left;}
+            nav a {font-size: 20px;}
+        }
+        @media only screen and (min-width: 1024px) {
+            nav ul {margin-left: 2vw;}
+            nav li {width: auto;}
+            nav a {padding: .7rem 1rem;}
+        }
+    </style>
+</head>
+<body>
+    
+    <nav class="clearfix">
+        <div class="row limited">
+            <button id="hamburgerBtn">&#9776;</button>
+            <ul id="primaryNav">
+                <li class="active"><a href="#">Specials</a></li>
+                <li><a href="#">Cheese Cakes</a></li>
+                <li><a href="#">Fruit Pies</a></li>
+                <li><a href="#">Swag Shop</a></li>
+            </ul>
+        </div>
+    </nav>
+    <script>
+        function toggleMenu() {
+            document.getElementById('primaryNav').classList.toggle('open');
+        }
+        let x = document.getElementById('hamburgerBtn');
+        x.onclick = toggleMenu;
+    </script>
+</body>
+</html>
